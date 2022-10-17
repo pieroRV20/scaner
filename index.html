@@ -9,7 +9,7 @@
 
     <div class="dadBox">
         <h1>SCAN VERIFY</h1>
-        <div class="scannerContainer container">
+        <div class="container">
             <video id="preview"  ></video>
             <button class="btnScanner">SCANEAR</button>
         </div>
@@ -29,17 +29,17 @@
                 mirror: false
             }
         );
-        btnScanner.addEventListener('click',()=>{
-            btnScanner.style.display="none";
+        //btnScanner.addEventListener('click',(event)=>{
+            //btnScanner.style.display="none";
             video.style.display="block"
             scanner.addListener('scan', function(content) {
-                if(true){
+                if(content=="Piero Rosales"){
                     response.innerHTML="Piero Rosales fue verificado "
                     response.style.display="block"
                     img_true.style.display="block"
                 }
             });
-        })
+        //})
         Instascan.Camera.getCameras().then(cameras => 
         {
             if(cameras.length > 0){
