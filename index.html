@@ -9,9 +9,9 @@
 
     <div class="dadBox">
         <h1>SCAN VERIFY</h1>
-        <div class="container">
-            <video id="preview"  ></video>
-            <button class="btnScanner">SCANEAR</button>
+        <div class="scannerContainer container">
+            <video id="preview" style="display: block !important;" ></video>
+            <!--<button class="btnScanner">SCANEAR</button>-->
         </div>
         <div class="container">
             <h2 id="response" ></h2>
@@ -29,9 +29,9 @@
                 mirror: false
             }
         );
-        //btnScanner.addEventListener('click',(event)=>{
+        //btnScanner.addEventListener('click',()=>{
             //btnScanner.style.display="none";
-            video.style.display="block"
+            //video.style.display="block"
             scanner.addListener('scan', function(content) {
                 if(content=="Piero Rosales"){
                     response.innerHTML="Piero Rosales fue verificado "
