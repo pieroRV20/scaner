@@ -25,8 +25,7 @@
             alert('Escaneou o conteudo: ' + content);
             message.innerHTML=content
             if(content=="Piero Rosales"){
-                let horaRegistro = new Date()
-                response.innerHTML="Piero Rosales fue verificado "+ horaRegistro.toLocaleString
+                response.innerHTML="Piero Rosales fue verificado "
             }
         });
         Instascan.Camera.getCameras().then(cameras => 
