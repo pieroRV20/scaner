@@ -1,39 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
 *{
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 body{
     background-color: rgb(245, 244, 244);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y:hidden;
+}
+.dadBox{
+    height: 100vh;
 }
 h1{
     width: 100%;
+    height: 10%;
     font-size: 120px;
-    color: rgb(30, 118, 233);
+    color: rgb(116, 197, 50);
     text-align: center;
     padding: 0px;
 }
 video{
+    display: none;
     padding: 20px 10%;
 }
 #img_true{
     display: none;
     width: 300px;
     height: 300px;
-    transition: all .5s;
 }
-.responseContainer{
+.container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.scannerContainer{
+    height: 90%;
+}
+.btnScanner{
+    width: 600px;
+    padding: 40px 0px;
+    font-size: 35px;
+    font-weight: 800;
+    color: white;
+    background-color: rgb(48, 98, 172);
+    border: none;
+    border-radius: 50px;
+}
 #response{
     display: none;
     font-size: 50px;
-    color: rgb(30, 230, 3);
-    transition: all .5s;
+    color: rgb(16, 62, 133);
 }
