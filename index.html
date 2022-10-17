@@ -7,44 +7,47 @@
 </head>
   <body>
 
-    <div class="container">
+    <div class="dadBox">
         <h1>SCAN VERIFY</h1>
-        <video id="preview"  ></video>
-
-        <div class="responseContainer">
+        <div class="scannerContainer container">
+            <video id="preview"  ></video>
+            <button class="btnScanner">SCANEAR</button>
+        </div>
+        <div class="container">
             <h2 id="response" ></h2>
             <img id="img_true"  src="assets/check.png" alt="">
         </div>
-    </div>
-    
+    </div>    
     <script>
         const response = document.getElementById("response");
         const img_true = document.getElementById("img_true");
+        const btnScanner = document.getElementById("btnScanner");
+        const video = document.getElementById('preview');
         let scanner = new Instascan.Scanner(
             {
                 video: document.getElementById('preview'),
                 mirror: false
             }
         );
-        scanner.addListener('scan', function(content) {
-            if(content=="Piero Rosales"){
-                response.innerHTML=content+" fue verificado "
-                response.style.display="block"
-                img_true.style.display="block"
-            }
-        });
-
+        btnScanner.addEventListener('click',()=>{
+            btnScanner.style.display="none";
+            video.style.display="block"
+            scanner.addListener('scan', function(content) {
+                if(true){
+                    response.innerHTML="Piero Rosales fue verificado "
+                    response.style.display="block"
+                    img_true.style.display="block"
+                }
+            });
+        })
         Instascan.Camera.getCameras().then(cameras => 
         {
             if(cameras.length > 0){
                 scanner.start(cameras[2]);
             } else {
-                console.error("Não existe câmera no dispositivo!");
+                console.error("No existe câmera no dispositivo!");
             }
         });
-
-        
     </script>
-
  </body>
 </html>
