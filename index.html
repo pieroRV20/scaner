@@ -10,13 +10,16 @@
     <div class="container">
         <h1>SCAN VERIFY</h1>
         <video id="preview"  ></video>
-        <p id="message"></p>
-        <h2 id="response"></h2>
+
+        <div class="responseContainer">
+            <h2 id="response" ></h2>
+            <img id="img_true"  src="assets/check.png" alt="">
+        </div>
     </div>
     
     <script>
-        const message = document.getElementById("message");
         const response = document.getElementById("response");
+        const img_true = document.getElementById("img_true");
         let scanner = new Instascan.Scanner(
             {
                 video: document.getElementById('preview'),
@@ -24,12 +27,13 @@
             }
         );
         scanner.addListener('scan', function(content) {
-            alert('Escaneou o conteudo: ' + content);
-            message.innerHTML=content
             if(content=="Piero Rosales"){
-                response.innerHTML="Piero Rosales fue verificado "
+                response.innerHTML=content+" fue verificado "
+                response.style.display="block"
+                img_true.style.display="block"
             }
         });
+
         Instascan.Camera.getCameras().then(cameras => 
         {
             if(cameras.length > 0){
@@ -38,6 +42,8 @@
                 console.error("Não existe câmera no dispositivo!");
             }
         });
+
+        
     </script>
 
  </body>
