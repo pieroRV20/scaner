@@ -23,7 +23,7 @@
         scanner.addListener('scan', function(content) {
             alert('Escaneou o conteudo: ' + content);
             message.innerHTML=content
-            if(response=="Piero Rosales"){
+            if(content=="Piero Rosales"){
                 let horaRegistro = new Date()
                 response.innerHTML="Piero Rosales fue verificado "+ horaRegistro.toLocaleString
             }
