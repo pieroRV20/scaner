@@ -10,10 +10,12 @@
     <div class="container">
         <h1>SCAN VERIFY</h1>
         <video id="preview"  ></video>
-        <p id="response"></p>
+        <p id="message"></p>
+        <h2 id="response"></h2>
     </div>
     
     <script>
+        const message = document.getElementById("message");
         const response = document.getElementById("response");
         let scanner = new Instascan.Scanner(
             {
