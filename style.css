@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+*{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body{
+    background-color: rgb(236, 250, 255);
+}
+.container{
+    width: 100%;
+    display: flexbox !important;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    width: 100%;
+    font-size: 80px;
+    color: rgb(0, 255, 128);
+    text-align: center;
+    padding: 0px;
+}
+
+video{
+    padding: 20px 9%;
+}
