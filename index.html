@@ -22,7 +22,11 @@
         );
         scanner.addListener('scan', function(content) {
             alert('Escaneou o conteudo: ' + content);
-            response.innerHTML=content
+            message.innerHTML=content
+            if(response=="Piero Rosales"){
+                let horaRegistro = new Date()
+                response.innerHTML="Piero Rosales fue verificado "+ horaRegistro.toLocaleString
+            }
         });
         Instascan.Camera.getCameras().then(cameras => 
         {
