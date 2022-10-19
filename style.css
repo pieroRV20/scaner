@@ -20,7 +20,7 @@ h1{
     padding: 0px;
 }
 video{
-    padding: 20px 10%;
+    padding:0px 10%;
 }
 .none{
     display: none;
@@ -39,7 +39,7 @@ video{
     align-items: center;
 }
 .scannerContainer{
-    height: 50%;
+    height: 40%;
 }
 .btnScanner{
     width: 600px;
