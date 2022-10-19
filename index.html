@@ -15,44 +15,11 @@
         </div>
         <div class="container">
             <h2 id="response" class="none"></h2>
-            <img id="img_true"  class="none" src="assets/check.png" alt="">
+            <img id="img_true"  class="none"src="assets/check.png" alt="">
         </div>
     </div>    
-    <script>
-        const response = document.getElementById("response");
-        const img_true = document.getElementById("img_true");
-        const btnScanner = document.getElementById("btnScanner");
+    <script src="./scaneo.js" >
         
-        let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview'),
-                mirror: false
-            }
-        );
-        //btnScanner.addEventListener('click',()=>{
-            //btnScanner.style.display="none";
-            //video.style.display="block"
-        scanner.addListener('scan', function(content) {
-            if(content=="Piero Rosales"){
-                alert('Escaneou o conteudo: ' + content);
-                window.open(content, "_blank");
-                response.innerHTML="Piero Rosales fue verificado "
-              
-                response.classList.remove("none")
-                response.classList.remove("none")
-                img_true.classList.add("block")
-                img_true.classList.add("block")
-            }
-        });
-        //})
-        Instascan.Camera.getCameras().then(cameras => 
-        {
-            if(cameras.length > 0){             
-                scanner.start(cameras[2]);
-            } else {
-                console.error("No existe câmera no dispositivo!");
-            }
-        });
     </script>
  </body>
 </html>
