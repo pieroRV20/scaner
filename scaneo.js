@@ -12,11 +12,12 @@ scanner.addListener('scan', function(content) {
     fetch('https://scanner-f97e1-default-rtdb.firebaseio.com/clientes.json')
     .then((response) => response.json())
     .then((data) => {
+        response.innerHTML="Codigo no encontrado"
+        response.classList.remove("none")
+        response.classList.add("block")
         data.map((cliente,index)=>{
             let nombre=content.split("-");
-            response.classList.remove("none")
-            response.classList.add("block")
-            if(cliente.content===content ){
+            if(cliente.content===content){
                 if (cliente.number_scanners==0) {
                     response.innerHTML=nombre[0]+" fue verificado "
                     response.classList.remove("none")
@@ -33,11 +34,10 @@ scanner.addListener('scan', function(content) {
                             "Content-Type" : "application/json"
                         }
                     })
+                        return
                 }else{
                     if(cliente.number_scanners>=1) response.innerHTML="Codigo ya fue verificado-No valido"
                 }
-            }else{
-                response.innerHTML="Codigo no encontrado"
             }
         })
     });
