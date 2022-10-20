@@ -28,6 +28,7 @@ scanner.addListener('scan', function(content) {
                     fetch(`https://scanner-f97e1-default-rtdb.firebaseio.com/clientes/${index}.json`, {
                         method: "PATCH",
                         body: JSON.stringify({
+                            date_scanner: registro.getHours.toLocaleString() + ":"+registro.getMinutes.toLocaleString(), 
                             number_scanners: cliente.number_scanners
                         }),
                         headers: {
@@ -35,7 +36,7 @@ scanner.addListener('scan', function(content) {
                         }
                     })
                 }else{
-                    if(cliente.number_scanners>=1) response.innerHTML="Codigo ya fue verificado-No valido "+cliente.date_scanner
+                    if(cliente.number_scanners>=1) response.innerHTML="Este codigo ya fue escaneado <br/> "+cliente.date_scanner
                 }
             }
         })
