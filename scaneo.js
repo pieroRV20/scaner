@@ -3,7 +3,10 @@ const img_true = document.getElementById("img_true");
 const btnScanner = document.getElementById("btnScanner");
 let scanner = new Instascan.Scanner({
         video: document.getElementById('preview'),
-        mirror: false
+        continuous: true,
+        mirror: false,
+        refractoryPeriod: 5000,
+        scanPeriod: 5
     } );
 scanner.addListener('scan', function(content) {
     fetch('https://scanner-f97e1-default-rtdb.firebaseio.com/clientes.json')
