@@ -1,3 +1,13 @@
+const response = document.getElementById("response");
+const img_true = document.getElementById("img_true");
+const btnScanner = document.getElementById("btnScanner");
+let scanner = new Instascan.Scanner({
+        continuous: true,
+        video: document.getElementById('preview'),
+        mirror: false,
+        refractoryPeriod: 5000,
+        scanPeriod: 5
+    } );
 scanner.addListener('scan', function(content) {   
     fetch('https://scanner-f97e1-default-rtdb.firebaseio.com/clientes.json')
     .then((response) => response.json())
@@ -33,4 +43,11 @@ scanner.addListener('scan', function(content) {
             }
         })
     });
+});
+Instascan.Camera.getCameras().then(cameras => {
+    if(cameras.length > 0){             
+        scanner.start(cameras[2]);
+    } else {
+        console.error("No existe câmera no dispositivo!");
+    }
 });
