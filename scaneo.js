@@ -34,10 +34,8 @@ scanner.addListener('scan', function(content) {
                             "Content-Type" : "application/json"
                         }
                     })
-                    return
                 }else{
                     if(cliente.number_scanners>=1) response.innerHTML="Codigo ya fue verificado-No valido "+cliente.date_scanner
-                    return
                 }
             }
         })
