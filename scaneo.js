@@ -26,7 +26,7 @@ scanner.addListener('scan', function(content) {
                     fetch(`https://scanner-f97e1-default-rtdb.firebaseio.com/clientes/${index}.json`, {
                         method: "PATCH",
                         body: JSON.stringify({
-                            date_scanner: registro.getHours.toLocaleString() + ":"+registro.getMinutes.toLocaleString(), 
+                            date_scanner: registro.getHours.toString() + ":"+registro.getMinutes.toString(), 
                             number_scanners: cliente.number_scanners
                         }),
                         headers: {
