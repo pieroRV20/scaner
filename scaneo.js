@@ -14,8 +14,6 @@ scanner.addListener('scan', function(content) {
     .then((data) => {
         data.map((cliente,index)=>{
             let nombre=content.split("-");
-            img_true.classList.remove("block")
-            img_true.classList.add("none")
             response.classList.remove("none")
             response.classList.add("block")
             if(cliente.content===content ){
@@ -36,7 +34,11 @@ scanner.addListener('scan', function(content) {
                         }
                     })
                 }else{
-                    if(cliente.number_scanners>=1) response.innerHTML="Este codigo ya fue escaneado <br/> "+cliente.date_scanner
+                    if(cliente.number_scanners>=1) {
+                        img_true.classList.remove("block")
+                        img_true.classList.add("none")
+                        response.innerHTML="Este codigo ya fue escaneado <br/> "+cliente.date_scanner
+                    }
                 }
             }
         })
