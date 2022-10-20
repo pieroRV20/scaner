@@ -9,6 +9,8 @@ let scanner = new Instascan.Scanner({
         scanPeriod: 5
     } );
 scanner.addListener('scan', function(content) {
+    img_true.classList.remove("block")
+    img_true.classList.add("none")
     fetch('https://scanner-f97e1-default-rtdb.firebaseio.com/clientes.json')
     .then((response) => response.json())
     .then((data) => {
